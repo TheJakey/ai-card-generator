@@ -1,6 +1,30 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.btn {
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 4px;
+}
+
+.primary-button {
+  background-color: #00b9c4;
+  color: #fff;
+
+  &:hover {
+    background-color: #fff;
+    outline: 2px solid #00b9c4;
+    border: 2px solid #00b9c4;
+    color: #00b9c4;
+  }
+}
+
+.secondary-button {
+  background-color: #fff;
+  color: #00b9c4;
+  border: 2px solid #00b9c4;
+
+  &:hover {
+    outline: 2px solid #00b9c4;
+  }
 }
