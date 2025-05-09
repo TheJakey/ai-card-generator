@@ -1,0 +1,64 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    background-color: #fff; /* Light yellow background */
+    border-radius: 8px;
+    padding: 10px;
+    margin: 1px;
+    width: 300px;
+    height:190px;
+    border: 1px dotted #666464; /* Darker yellow border */
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .card-container {
+    padding: 15px 10px 40px;
+    border-radius: 8px;
+    background-image: url("./assets/yellow_pattern.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .back {
+    height: -webkit-fill-available;
+    align-content: center;
+    border-radius: 4px;
+  }
+  
+  .back .category-name {
+    padding: 20px;
+    font-size: 28px;
+  }
+  
+  .card-header {
+    
+    padding: 4px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+  }
+  
+  .category-name {
+    color: white;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px;
+    background-color: #ffffff34;
+  }
+  
+  .card-body {
+    padding: 4px;
+    background-color: #fae48d; /* Light yellow background */
+    border-radius: 4px;
+  }
+  
+  .option {
+    color: #333; /* Dark text color */
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
