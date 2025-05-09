@@ -7,8 +7,6 @@ import (
 	"net/http"
 )
 
-const groqAPIURL = "https://api.groq.com/openai/v1/chat/completions"
-
 type GroqMessage struct {
 	Role    string `json:"role"`
 	Content string `json:"content"`
@@ -30,17 +28,21 @@ type GroqResponse struct {
 }
 
 type Client struct {
-	apiKey string
+	apiUrl        string
+	apiKey        string
+	systemMessage string
+	model         string
 }
 
-func NewClient(apiKey string) *Client {
-	return &Client{apiKey: apiKey}
+func NewClient(apiUrl string, apiKey string, systemMessage string, model string) *Client {
+	return &Client{apiUrl: apiUrl, apiKey: apiKey, systemMessage: systemMessage, model: model}
 }
 
 func (c *Client) ChatCompletion(userPrompt string) (string, error) {
 	reqBody := GroqRequest{
 		Model: "llama-3.3-70b-versatile",
 		Messages: []GroqMessage{
+			{Role: "system", Content: c.systemMessage},
 			{Role: "user", Content: userPrompt},
 		},
 	}
@@ -49,7 +51,7 @@ func (c *Client) ChatCompletion(userPrompt string) (string, error) {
 		return "", err
 	}
 
-	req, err := http.NewRequest("POST", groqAPIURL, bytes.NewBuffer(bodyBytes))
+	req, err := http.NewRequest("POST", c.apiUrl, bytes.NewBuffer(bodyBytes))
 	if err != nil {
 		return "", err
 	}
