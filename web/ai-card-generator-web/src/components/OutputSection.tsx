@@ -3,6 +3,9 @@ import { WhoAmICard, WhoAmICardBack } from "./templates/who-am-i/WhoAmICard";
 
 interface OutputSectionProps {
   output: WhoAmICardOptionType[];
+  outputConfig: {
+    cardOrientation: "horizontal" | "vertical";
+  }
 }
 
 const OutputSection = ({ output }: OutputSectionProps) => {

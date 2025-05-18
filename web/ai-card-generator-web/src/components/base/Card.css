@@ -1,0 +1,44 @@
+ 
+  .card {
+    background-color: #fff; /* Light yellow background */
+    border-radius: 8px;
+    margin: 1px;
+    border: 1px dotted #666464; /* Darker yellow border */
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  .card-vertical {
+    width: 190px;
+    height: 300px;
+  }
+
+  .card-horizontal {
+    width: 300px;
+    height: 190px;
+  }
+  
+  .card-container {
+    padding: 15px 10px 40px;
+    border-radius: 8px;
+    background-image: url("./assets/yellow_pattern.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  
+  .card-header {
+    
+    padding: 4px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+  }
+  
+  
+  .card-body {
+    padding: 4px;
+    background-color: #fae48d; /* Light yellow background */
+    border-radius: 4px;
+  }
+ 
+  

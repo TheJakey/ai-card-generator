@@ -39,8 +39,18 @@ const MainPage = () => {
         onSubmit={sendPrompt}
         onChange={handleInputChange}
       />
-      <ActionButtons onAction={handleAction} clearable={output.length > 0} />
-      <OutputSection output={output} />
+      {output.length > 0 && (
+        <>
+          <ActionButtons
+            onAction={handleAction}
+            clearable={output.length > 0}
+          />
+          <OutputSection
+            output={output}
+            outputConfig={{ cardOrientation: "horizontal" }}
+          />
+        </>
+      )}
     </div>
   );
 };
