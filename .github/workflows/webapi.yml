@@ -1,0 +1,19 @@
+name: [WebApi] Build and Push Docker Image to Nexus
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ '*.*.*' ]
+    paths:
+      - 'webapi/**'
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  build-and-push:
+    uses: .github/workflows/docker-image.yml
+    with:
+      image-name: 'imjake.eu/ai-card-generator-webapi'
+      tags: |
+        type=raw,value=latest,enable=${{ github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main' }}
+        type=ref,event=tag
+        type=sha
