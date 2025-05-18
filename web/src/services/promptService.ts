@@ -4,12 +4,10 @@ export interface PromptRequest {
   prompt: string;
 }
 
-export interface PromptResponse {
-  result: string;
-}
+export type PromptResponse = string[][];
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: "webapi",
   headers: {
     "Content-Type": "application/json",
   },
