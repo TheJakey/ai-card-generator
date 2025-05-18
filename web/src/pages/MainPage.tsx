@@ -6,6 +6,7 @@ import OutputSection from "@/components/OutputSection";
 import promptService from "@/services/promptService";
 import { WhoAmICardOptionType } from "@/types";
 import { gameData } from "@/assets/data";
+import { getRandomHexColor } from "@/utils";
 
 const MainPage = () => {
   const [userInput, setUserInput] = useState("");
@@ -16,19 +17,28 @@ const MainPage = () => {
   };
 
   const handleAction = (action: string) => {
-    console.log("Action:", action);
+    // console.log("Action:", action);
 
     if (action === "clear") {
       setOutput([]);
     }
+
+    if (action === "show-example") {
+      setOutput(gameData);
+    }
   };
 
   const sendPrompt = async (value: string) => {
-    setOutput(gameData);
-    console.log("Sending prompt:", value);
     const response = await promptService.sendPrompt({ prompt: value });
-    console.log("Response:", response);
-    // setOutput(response);
+
+    const generatedData: WhoAmICardOptionType[] = [
+      {
+        category: value,
+        color: getRandomHexColor(),
+        data: response,
+      },
+    ];
+    setOutput(generatedData);
   };
 
   return (

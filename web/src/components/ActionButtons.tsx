@@ -18,6 +18,12 @@ const ActionButtons = ({ onAction, clearable }: ActionButtonsProps) => {
       >
         Customize
       </button>
+      <button
+        className="btn secondary-button"
+        onClick={() => onAction("show-example")}
+      >
+        Show example
+      </button>
       {clearable && (
         <button
           className="btn secondary-button"
