@@ -1,6 +1,31 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.btn {
+  border-radius: 1.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.125rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0.25rem;
+}
+
+.primary-button {
+  background-color: #00b9c4;
+  color: #fff;
+
+  &:hover {
+    background-color: #fff;
+    outline: 2px solid #00b9c4;
+    border: 2px solid #00b9c4;
+    color: #00b9c4;
+  }
+}
+
+.secondary-button {
+  background-color: #fff;
+  color: #00b9c4;
+  border: 2px solid #00b9c4;
+
+  &:hover {
+    outline: 2px solid #00b9c4;
+  }
 }
