@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-push:
-    uses: .github/workflows/docker-image.yml
+    uses: ./.github/workflows/docker-image.yml
     with:
       image-name: 'imjake.eu/ai-card-generator-web'
       tags: |
