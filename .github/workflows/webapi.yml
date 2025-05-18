@@ -1,4 +1,4 @@
-name: [WebApi] Build and Push Docker Image to Nexus
+name: WebApi CI
 
 on:
   push:
