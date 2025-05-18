@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Build stage
-FROM --platform=$BUILDPLATFORM golang:1.20-alpine AS builder
+FROM golang:1.20-alpine AS builder
 
 # Enable Go modules and CGO disabled for static build
 ENV CGO_ENABLED=0 GOOS=linux
