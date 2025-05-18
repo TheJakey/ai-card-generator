@@ -45,6 +45,7 @@ func main() {
 		answer, err := groqClient.ChatCompletion(req.Prompt)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
+			log.Println("err: ", err)
 			return
 		}
 
@@ -52,6 +53,7 @@ func main() {
 		err = json.Unmarshal([]byte(answer), &parsedAnswer)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
+			log.Println("Failed to parse response from Groq.\n Err: ", err, "\n", "answer: ", answer)
 			return
 		}
 		json.NewEncoder(w).Encode(parsedAnswer)
