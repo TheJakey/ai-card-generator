@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # Build stage
-FROM --platform=$TARGETPLATFORM golang:1.20-alpine AS builder
+FROM golang:1.20-alpine AS builder
 
 # Enable Go modules and CGO disabled for static build
 ENV CGO_ENABLED=0 GOOS=linux
@@ -21,7 +21,7 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
     go build -o webapi ./cmd/server
 
 # Final stage: minimal image
-FROM --platform=$TARGETPLATFORM alpine:3.19
+FROM alpine:3.19
 
 WORKDIR /app
 
