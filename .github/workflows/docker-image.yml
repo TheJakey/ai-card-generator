@@ -3,6 +3,9 @@ name: Docker Image CI
 on: 
   workflow_call:
     inputs:
+      directory:
+        type: string
+        required: true
       image-name: 
         type: string
         required: true
@@ -16,7 +19,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Login to Nexus Docker Repository
         uses: docker/login-action@v3
         with:
@@ -37,7 +40,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ${{ inputs.directory }}
           push: true
           tags: ${{ steps.meta.outputs.tags }}
    

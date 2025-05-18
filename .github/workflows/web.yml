@@ -11,7 +11,9 @@ on:
 jobs:
   build-and-push:
     uses: ./.github/workflows/docker-image.yml
+    secrets: inherit
     with:
+      directory: './web'
       image-name: 'imjake.eu/ai-card-generator-web'
       tags: |
         type=raw,value=latest,enable=${{ github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main' }}
