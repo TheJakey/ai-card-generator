@@ -5,7 +5,7 @@ interface MainContainerProps {
 }
 
 const MainContainer = ({ children }: MainContainerProps): JSX.Element => {
-  return <div className="p-10 mt-8">{children}</div>;
+  return <div className="py-10 px-30 min-h-dvh">{children}</div>;
 };
 
 export default MainContainer;

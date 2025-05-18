@@ -7,7 +7,7 @@ interface OutputSectionProps {
 
 const OutputSection = ({ output }: OutputSectionProps) => {
   return (
-    <div className="p-5 border-dotted border-2 border-gray-400 rounded-2xl">
+    <div className="p-5 mb-5 border-dotted border-2 border-gray-400 rounded-2xl">
       {output ? (
         <>
           {/* <p>{JSON.stringify(output)}</p> */}
